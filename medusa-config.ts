@@ -4,6 +4,7 @@ loadEnv(process.env.NODE_ENV || 'development', process.cwd())
 
 module.exports = defineConfig({
   projectConfig: {
+    redisUrl: process.env.REDIS_URL || "redis://localhost:6379",
     workerMode: (process.env.MEDUSA_WORKER_MODE as "shared" | "worker" | "server") || "shared",
     databaseUrl: process.env.DATABASE_URL,
     http: {
